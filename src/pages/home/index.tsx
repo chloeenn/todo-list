@@ -4,7 +4,6 @@ import CreateTask from "../../components/CreateTask";
 import Separator from "../../components/Separator";
 import * as Styled from "./styles";
 import TaskList from "../../components/TaskList";
-
 const Home: React.FC = () => {
   return (
     <Styled.HomeContainer>

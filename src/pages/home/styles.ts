@@ -18,8 +18,12 @@ export const SidebarContainer = styled.div`
 `;
 
 export const MainContainer = styled.div`
-display: flex;
-width: 78%;
+  width: 78%;
+align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 32px;
 `
 export const Title = styled.h2`
   font-size: 24px;
@@ -28,7 +32,7 @@ export const Title = styled.h2`
   margin-bottom: 15px;
 `;
 
-export const SectionTitle = styled.p`
+export const SectionTitle = styled.a`
   font-size: 16px;
   font-weight: 400;
   color: black;
@@ -38,6 +42,6 @@ export const SectionTitle = styled.p`
   &:hover {
     border-radius: 10px;
     background-color:#D3D3D3;
-    transition: 0.3s;
+    transition: 0.3s ease-out;
   }
 `;
