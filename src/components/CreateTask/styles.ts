@@ -29,7 +29,7 @@ export const CreateButton = styled.button`
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   width: 100%; 
-
+  height: 50px;
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -80,6 +80,7 @@ export const Input = styled.input`
   border-radius: 8px;
   outline: none;
   width: 100%;
+  height: 20%;
   box-sizing: border-box;
 `;
 
@@ -93,7 +94,7 @@ export const TextArea = styled.textarea`
   width: 100%;
   box-sizing: border-box;
   resize: none;
-  height: 80px;
+  height: 50%;
 `;
 
 export const DateInput = styled.input`
@@ -114,7 +115,7 @@ export const ButtonContainer = styled.div`
 `;
 
 export const SubmitButton = styled.button`
-  height: 32px;
+  height: 42px;
   background:rgb(0, 0, 0);
   color: white;
   padding: 8px 16px;
