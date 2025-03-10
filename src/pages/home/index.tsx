@@ -1,28 +1,14 @@
-import React, { useState } from "react";
-import SearchBar from "../../components/SearchBar";
+import React from "react";
 import CreateTask from "../../components/CreateTask";
-import Separator from "../../components/Separator";
 import * as Styled from "./styles";
 import TaskList from "../../components/TaskList";
 const Home: React.FC = () => {
-  return (
-    <Styled.HomeContainer>
-      <Styled.SidebarContainer>
-        <Styled.Title>Menu</Styled.Title>
-        <SearchBar />
-        <Separator />
-        <Styled.SectionTitle>Home</Styled.SectionTitle>
-        <Styled.SectionTitle>Completed</Styled.SectionTitle>
-        <Styled.SectionTitle>Upcoming</Styled.SectionTitle>
-      </Styled.SidebarContainer>
-      <Styled.MainContainer>
-        <CreateTask/>
-        <TaskList/>
-      </Styled.MainContainer>
-
-    </Styled.HomeContainer>
-
-  );
+    return (
+        <Styled.MainContainer>
+            <CreateTask />
+            <TaskList />
+        </Styled.MainContainer>
+    );
 };
 
 export default Home;

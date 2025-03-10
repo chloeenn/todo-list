@@ -6,7 +6,6 @@ export const FormContainer = styled.div`
   width: 30%;
   padding: 0 16px;
   display: flex;
-  justify-content: center;
   z-index: 1000;
 `;
 

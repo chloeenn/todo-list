@@ -30,7 +30,6 @@ const CreateTask: React.FC = () => {
 
   return (
     <Styled.FormContainer>
-      {/* <h2>Hello</h2> */}
       {isInputVisible && (
         <Styled.TaskForm onSubmit={handleAddTask}>
           <Styled.Input

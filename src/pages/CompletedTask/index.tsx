@@ -1,16 +1,25 @@
 import React from "react";
-// import { useTasks } from "../../context/TaskContext";
-// import TaskItem from "./TaskItem"; // Reuse the same TaskItem component
-// import * as Styled from "./styles";
+import TaskItem from "../../components/TaskItem";
+import * as Styled from "./styles";
+import { useTasks } from "../../context/TaskContext";
 
-// const CompletedTask: React.FC = () => {
-//     const { completedTasks } = useTasks();
+const Completed: React.FC = () => {
+  const { completedTasks } = useTasks();
 
-//     return (
-//         <Styled.TaskList>
-//             {completedTasks.length === 0 ? <h1>No completed tasks</h1> : completedTasks.map((task) => <TaskItem key={task.id} task={task} />)}
-//         </Styled.TaskList>
-//     );
-// };
+  return (
+    <Styled.CompletedContainer>
+      <Styled.SectionTitle>Completed Tasks</Styled.SectionTitle>
+      {completedTasks.length > 0 ? (
+        <Styled.TaskList>
+          {completedTasks.map((task) => (
+            <TaskItem key={task.id} task={task} />
+          ))}
+        </Styled.TaskList>
+      ) : (
+        <Styled.NoTasksMessage>No completed tasks yet</Styled.NoTasksMessage>
+      )}
+    </Styled.CompletedContainer>
+  );
+};
 
-// export default CompletedTask;
+export default Completed;
