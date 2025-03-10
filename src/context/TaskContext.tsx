@@ -1,21 +1,7 @@
 import React, { useState, createContext, ReactNode, useContext, useEffect } from "react";
 import { get, save } from "../utils/LocalStorage";
+import { Task, TaskContextType } from "../types/Task.types"
 
-interface Task {
-    id: number;
-    title: string;
-    description?: string;
-    date?: string;
-    done: boolean;
-}
-interface TaskContextType {
-    tasks: Task[];
-    completedTasks: Task[];
-    addTask: (title: string, description?: string, date?: string) => void;
-    deleteTask: (id: number) => void;
-    editTask: (id: number, title: string, description?: string, date?: string) => void;
-    completeTask: (id: number) => void;
-};
 const TaskContext = createContext<TaskContextType | null>(null);
 
 const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
