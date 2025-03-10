@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 18%;
+  width: 20%;
   border-radius: 12px;
   background-color: #fff;
   padding: 20px;
@@ -25,7 +25,12 @@ export const SectionTitle = styled.a`
   color: black;
   margin: 5px 0;
   cursor: pointer;
-  padding: 15px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  text-decoration: none;
   &:hover {
     border-radius: 10px;
     background-color:#D3D3D3;
