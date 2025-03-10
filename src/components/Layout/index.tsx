@@ -1,8 +1,8 @@
 import React from "react";
 import * as Styled from "./styles";
-import Home from "src/pages/Home";
-import Sidebar from "src/components/Sidebar";
-import Completed from "src/pages/CompletedTask";
+import Home from "../../pages/Home";
+import Sidebar from "../Sidebar";
+import Completed from "../../pages/CompletedTask";
 import { Routes, Route } from "react-router-dom";
 
 const Layout: React.FC = () => {
