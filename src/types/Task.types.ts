@@ -10,6 +10,7 @@ export interface TaskContextType {
     completedTasks: Task[];
     addTask: (title: string, description?: string, date?: string) => void;
     deleteTask: (id: number) => void;
+    deleteAllTasks: () => void;
     editTask: (id: number, title: string, description?: string, date?: string) => void;
     completeTask: (id: number) => void;
 };
