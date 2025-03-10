@@ -3,14 +3,10 @@ import styled from "styled-components";
 export const FormContainer = styled.div`
   position: fixed;
   bottom: 20px; 
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 320px;
+  width: 30%;
   padding: 0 16px;
   display: flex;
   justify-content: center;
-  align-items: center;
   z-index: 1000;
 `;
 

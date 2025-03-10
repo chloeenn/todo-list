@@ -2,7 +2,7 @@ import React, { useState, createContext, ReactNode, useContext, useEffect } from
 import { get, save } from "../utils/LocalStorage";
 import { Task, TaskContextType } from "../types/Task.types"
 
-const TaskContext = createContext<TaskContextType | null>(null);
+const TaskContext = createContext<TaskContextType | undefined>(undefined);
 
 const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [tasks, setTasks] = useState<Task[]>([]);

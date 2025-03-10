@@ -4,7 +4,7 @@ import TaskItem from "../../components/TaskItem";
 import * as Styled from "./styles";
 
 const TaskList: React.FC = () => {
-    const { tasks, deleteTask, completeTask } = useTasks();
+    const { tasks } = useTasks();
 
     return (
         <Styled.TaskList>
@@ -13,7 +13,7 @@ const TaskList: React.FC = () => {
             ) : (
                 tasks.map((task) => (
                     <TaskItem
-                        task={task}
+                        key={task.id} task={task} 
                     />
                 ))
             )}

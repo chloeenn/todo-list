@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ReactComponent as Remove } from "../../assets/svg/x.svg";
-import { ReactComponent as CheckIcon } from "../../assets/svg/check.svg";
+import { RemoveIcon } from '../icons/RemoveIcon';
+import { CheckIcon } from '../icons/CheckIcon';
 import * as Styled from "./styles"
 import { useTasks } from "../../context/TaskContext";
 interface TaskItemProps {
@@ -25,15 +25,16 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
 
     const handleSaveEdit = (task: any) => {
         if (editedTask && editedTask.id === task.id) {
-            const newTitle = editedTask.title.trim() === "" ? task.title : editedTask.title; 
-            editTask(task.id, newTitle, task.description, editedTask.date);
-            setEditedTask(null); 
+            const newTitle = editedTask.title.trim() === "" ? task.title : editedTask.title;
+            const newDate = editedTask.date.trim() === "" ? task.date : editedTask.date;
+            editTask(task.id, newTitle, task.description, newDate);
+            setEditedTask(null);
         }
     };
 
     return (
         <Styled.TaskItem $completed={task.done}>
-            <Styled.CheckBoxContainer onClick={() => completeTask(task.id)} $completed={task.done}>
+            <Styled.CheckBoxContainer onClick={() => completeTask(task.id)} data-testid="complete-task" $completed={task.done}>
                 {task.done && <CheckIcon />}
             </Styled.CheckBoxContainer>
             <Styled.TaskInput
@@ -41,7 +42,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
                 value={editedTask?.id === task.id ? editedTask.title : task.title}
                 onChange={(e) => handleEditChange(task.id, e.target.value, "title")}
                 onBlur={() => handleSaveEdit(task)}
-                $completed={task.done} 
+                $completed={task.done}
             />
             <Styled.TaskDate
                 type="date"
@@ -49,8 +50,8 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
                 onChange={(e) => handleEditChange(task.id, e.target.value, "date")}
                 onBlur={() => handleSaveEdit(task)}
             />
-            <Styled.DeleteButton onClick={() => deleteTask(task.id)}>
-                <Remove />
+            <Styled.DeleteButton onClick={() => deleteTask(task.id)} data-testid="delete-task">
+                <RemoveIcon />
             </Styled.DeleteButton>
         </Styled.TaskItem>
     );

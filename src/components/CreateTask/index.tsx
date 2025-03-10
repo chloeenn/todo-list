@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTasks } from "../../context/TaskContext";
-import { ReactComponent as Plus } from "../../assets/svg/plus.svg";
+import { PlusIcon } from '../icons/PlusIcon';
 import * as Styled from "./styles";
 
 const CreateTask: React.FC = () => {
@@ -30,6 +30,7 @@ const CreateTask: React.FC = () => {
 
   return (
     <Styled.FormContainer>
+      {/* <h2>Hello</h2> */}
       {isInputVisible && (
         <Styled.TaskForm onSubmit={handleAddTask}>
           <Styled.Input
@@ -50,7 +51,6 @@ const CreateTask: React.FC = () => {
             onChange={(e) => setDate(e.target.value)}
           />
           <Styled.ButtonContainer>
-           
             <Styled.CancelButton type="button" onClick={handleCancel}>
               Cancel
             </Styled.CancelButton>
@@ -59,7 +59,7 @@ const CreateTask: React.FC = () => {
         </Styled.TaskForm>
       )}
       <Styled.CreateButton onClick={() => setIsInputVisible(true)}>
-        <Plus /> Create New Task
+        <PlusIcon /> Create New Task
       </Styled.CreateButton>
     </Styled.FormContainer>
   );
