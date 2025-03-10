@@ -1,6 +1,6 @@
 import React, { useState, createContext, ReactNode, useContext, useEffect } from "react";
-import { get, save } from "src/hooks/useLocalStorage";
-import { Task, TaskContextType } from "src/types/Task.types";
+import { get, save } from "../hooks/useLocalStorage";
+import { Task, TaskContextType } from "../types/Task.types";
 
 const TaskContext = createContext<TaskContextType | undefined>(undefined);
 

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import CreateTask from '../index';
-import { TaskProvider } from '@context/TaskContext';
+import { TaskProvider } from '../../../context/TaskContext';
 describe('CreateTask', () => {
   beforeEach(()=>{
     render(<TaskProvider><CreateTask/></TaskProvider>)

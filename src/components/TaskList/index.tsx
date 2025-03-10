@@ -1,7 +1,7 @@
 import React from "react";
-import { useTasks } from "src/context/TaskContext";
-import TaskItem from "src/components/TaskItem";
+import { useTasks } from "../../context/TaskContext";
 import * as Styled from "./styles";
+import TaskItem from "../TaskItem";
 
 const TaskList: React.FC = () => {
     const { tasks } = useTasks();

@@ -15,14 +15,14 @@ vi.mock('../../../context/TaskContext', () => ({
     TaskProvider: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
     useTasks: () => mockUseTasks(),
 }));
-
+const NO_TASKS_MESSAGE = "No tasks to display";
 describe('TaskList', () => {
-    it('renders "No tasks" when the task list is empty', () => {
+    it(`renders ${NO_TASKS_MESSAGE} when the task list is empty`, () => {
         mockUseTasks.mockReturnValue({
             tasks: [] as Task[],
         });
         render(<TaskProvider><TaskList /></TaskProvider>);
-        expect(screen.getByText('No tasks')).toBeInTheDocument();
+        expect(screen.getByText(NO_TASKS_MESSAGE)).toBeInTheDocument();
     });
 
     it('renders TaskItem when tasks exist', () => {
