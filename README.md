@@ -54,7 +54,7 @@ src
    │  ├─ Search
    │  ├─ Sidebar
    │  ├─ TaskItem
-   │  │  └─ __tests
+   │  │  └─ __tests__
    │  ├─ TaskList
    │  │  └─ __tests__
    │  └─ icons
