@@ -9,6 +9,7 @@ interface Task {
 }
 interface TaskContextType {
     tasks: Task[];
+    completedTasks: Task[];
     addTask: (title: string, description?: string, date?: string) => void;
     deleteTask: (id: number) => void;
     editTask: (id: number, title: string, description?: string, date?: string) => void;
@@ -18,6 +19,8 @@ const TaskContext = createContext<TaskContextType | null>(null);
 
 const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [tasks, setTasks] = useState<Task[]>([]);
+    const [completedTasks, setCompletedTasks] = useState<Task[]>([]);
+
     const addTask = (title: string, description?: string, date?: string) => {
         const newTask: Task = { id: Date.now() + Math.random(), title, description, date, done: false };
         setTasks((prevTasks) => [...prevTasks, newTask]);
@@ -32,11 +35,20 @@ const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     }
     const completeTask = (id: number) => {
         setTasks((prevTasks) =>
-            prevTasks.map((task) => task.id == id ? { ...task, done: !task.done } : task)
-        )
+            prevTasks.map((task) =>
+                task.id === id ? { ...task, done: !task.done } : task
+            )
+        );
+        setCompletedTasks((prevCompletedTasks) => {
+            const taskToComplete = tasks.find((task) => task.id === id && task.done === true);
+            if (taskToComplete) {
+                return [...prevCompletedTasks, taskToComplete];
+            }
+            return prevCompletedTasks;
+        });
     }
     return (
-        <TaskContext.Provider value={{ tasks, addTask, deleteTask, editTask, completeTask }}>
+        <TaskContext.Provider value={{ tasks,completedTasks, addTask, deleteTask, editTask, completeTask }}>
             {children}
         </TaskContext.Provider>
     );
@@ -44,7 +56,7 @@ const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
 const useTasks = () => {
     const context = useContext(TaskContext);
-    if (!context) throw new Error("useTasks must be wrapped in TaskProvider");
+    if (!context) throw new Error("useTasks must be wrapped in TaskProvider :)");
     return context;
 }
 export { TaskProvider, useTasks };
