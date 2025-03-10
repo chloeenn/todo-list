@@ -1,4 +1,3 @@
-import { IconType } from 'src/types/Icon.types';
 import Icon from './Icon'; 
 
 export const PlusIcon = () => (

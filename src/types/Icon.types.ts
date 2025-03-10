@@ -1,5 +1,3 @@
-import React from 'react';
-
 export interface IconType {
     className?: string;
     size?: number;
