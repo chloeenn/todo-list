@@ -2,6 +2,7 @@ import React from "react";
 import TaskItem from "../../components/TaskItem";
 import * as Styled from "./styles";
 import {MainContainer, TextContainer, TextHeading } from "../Home/styles";
+import {TaskList} from "../../components/TaskList/styles"
 import { useTasks } from "../../context/TaskContext";
 
 const Completed: React.FC = () => {
@@ -15,11 +16,11 @@ const Completed: React.FC = () => {
                 </TextHeading>
             </TextContainer>
             {completedTasks.length > 0 ? (
-                <Styled.TaskList>
+                <TaskList>
                     {completedTasks.map((task) => (
                         <TaskItem key={task.id} task={task} />
                     ))}
-                </Styled.TaskList>
+                </TaskList>
             ) : (
                 <Styled.NoTasksMessage>No completed tasks yet</Styled.NoTasksMessage>
             )}

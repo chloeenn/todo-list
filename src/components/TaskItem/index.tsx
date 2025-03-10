@@ -8,6 +8,7 @@ interface TaskItemProps {
         id: number;
         title: string;
         date?: string;
+        description?: string;
         done: boolean;
     };
 }
@@ -37,13 +38,19 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
             <Styled.CheckBoxContainer onClick={() => completeTask(task.id)} data-testid="complete-task" $completed={task.done}>
                 {task.done && <CheckIcon />}
             </Styled.CheckBoxContainer>
-            <Styled.TaskInput
-                type="text"
-                value={editedTask?.id === task.id ? editedTask.title : task.title}
-                onChange={(e) => handleEditChange(task.id, e.target.value, "title")}
-                onBlur={() => handleSaveEdit(task)}
-                $completed={task.done}
-            />
+            <Styled.TaskContent>
+                <Styled.TaskInput
+                    type="text"
+                    value={editedTask?.id === task.id ? editedTask.title : task.title}
+                    onChange={(e) => handleEditChange(task.id, e.target.value, "title")}
+                    onBlur={() => handleSaveEdit(task)}
+                    $completed={task.done}
+                />
+                {task.description && (
+                    <Styled.TaskDescription>{task.description}</Styled.TaskDescription>
+                )}
+            </Styled.TaskContent>
+
             <Styled.TaskDate
                 type="date"
                 value={editedTask?.id === task.id ? editedTask.date || "" : task.date || ""}

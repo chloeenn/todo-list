@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: 25%;
   border-radius: 12px;
   background-color: #fff;
   padding: 20px;
@@ -13,14 +13,14 @@ export const SidebarContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 600;
   color: black;
   margin-bottom: 15px;
 `;
 
 export const SectionTitle = styled.a`
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: #333;
   margin: 5px 0;

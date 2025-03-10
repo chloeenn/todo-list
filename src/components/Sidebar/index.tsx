@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SearchBar from "src/components/SearchBar";
+import SearchBar from "../Search";
 import * as Styled from "./styles";
 
 const Sidebar: React.FC = () => {
@@ -10,10 +10,10 @@ const Sidebar: React.FC = () => {
             <SearchBar />
             <Styled.Separator />
             <Styled.SectionTitle>
-                <Link to={"/"}>Home</Link>
+                <Link to={"/"}>🏠 Home</Link>
             </Styled.SectionTitle>
             <Styled.SectionTitle>
-                <Link to={"/completed"}>Completed</Link>
+                <Link to={"/completed"}>✔️ Completed</Link>
             </Styled.SectionTitle>
         </Styled.SidebarContainer>
     );

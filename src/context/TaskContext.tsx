@@ -1,5 +1,5 @@
 import React, { useState, createContext, ReactNode, useContext, useEffect } from "react";
-import { get, save } from "../hooks/useLocalStorage";
+import { get, save, remove } from "../utils/useLocalStorage";
 import { Task, TaskContextType } from "../types/Task.types";
 
 const TaskContext = createContext<TaskContextType | undefined>(undefined);
@@ -9,13 +9,10 @@ const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   useEffect(() => {
     const storedTasks = get();
-    if (storedTasks) {
-      setTasks(storedTasks);
-    }
+    setTasks(storedTasks);
   }, []);
-
   useEffect(() => {
-    save(tasks);
+    if (tasks.length) save(tasks);
   }, [tasks]);
 
   const completedTasks = tasks.filter((task) => task.done);
@@ -37,7 +34,7 @@ const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   const deleteAllTasks = () => {
     setTasks([]);
-    localStorage.removeItem("tasks"); 
+    remove();
   };
 
   const editTask = (id: number, title: string, description?: string, date?: string) => {

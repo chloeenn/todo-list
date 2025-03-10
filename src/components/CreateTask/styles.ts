@@ -7,6 +7,7 @@ export const FormContainer = styled.div`
   padding: 0 16px;
   display: flex;
   z-index: 1000;
+  justify-content: center;
 `;
 
 export const CreateButton = styled.button`

@@ -32,7 +32,13 @@ export const CheckBoxContainer = styled.div<{ $completed: boolean }>`
   }
 
 `;
-
+export const TaskContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 10px;
+  padding: 5px 0;
+`
 export const TaskInput = styled.input<{ $completed: boolean }>`
     flex: 1;
     font-size: 16px;
@@ -40,7 +46,7 @@ export const TaskInput = styled.input<{ $completed: boolean }>`
     border: none;
     background: transparent;
     outline: none;
-    padding: 8px;
+    
     border-radius: 8px;
     transition: background 0.2s ease, color 0.2s ease;
     color: ${({ $completed }) => ($completed ? "gray" : "black")};
@@ -49,7 +55,11 @@ export const TaskInput = styled.input<{ $completed: boolean }>`
             outline: none;
         }
 `;
-
+export const TaskDescription = styled.span`
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+`
 export const TaskDate = styled.input`
   font-size: 14px;
   color: #666;

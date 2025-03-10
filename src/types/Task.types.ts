@@ -14,6 +14,3 @@ export interface TaskContextType {
     editTask: (id: number, title: string, description?: string, date?: string) => void;
     completeTask: (id: number) => void;
 };
-export interface TaskListType {
-    section: string;
-}
