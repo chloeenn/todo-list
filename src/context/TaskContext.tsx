@@ -1,4 +1,5 @@
-import React, { useState, createContext, ReactNode, useContext } from "react";
+import React, { useState, createContext, ReactNode, useContext, useEffect } from "react";
+import { get, save } from "../utils/LocalStorage";
 
 interface Task {
     id: number;
@@ -20,6 +21,13 @@ const TaskContext = createContext<TaskContextType | null>(null);
 const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [tasks, setTasks] = useState<Task[]>([]);
     const [completedTasks, setCompletedTasks] = useState<Task[]>([]);
+    useEffect(() => {
+        const storedTasks = get();
+        setTasks(storedTasks);
+    }, []);
+    useEffect(() => {
+        if (tasks.length) save(tasks);
+    }, [tasks]);
 
     const addTask = (title: string, description?: string, date?: string) => {
         const newTask: Task = { id: Date.now() + Math.random(), title, description, date, done: false };
@@ -48,7 +56,7 @@ const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
         });
     }
     return (
-        <TaskContext.Provider value={{ tasks,completedTasks, addTask, deleteTask, editTask, completeTask }}>
+        <TaskContext.Provider value={{ tasks, completedTasks, addTask, deleteTask, editTask, completeTask }}>
             {children}
         </TaskContext.Provider>
     );

@@ -12,7 +12,7 @@ const Home: React.FC = () => {
         <SearchBar />
         <Separator />
         <Styled.SectionTitle>Home</Styled.SectionTitle>
-        <Styled.SectionTitle>Today</Styled.SectionTitle>
+        <Styled.SectionTitle>Completed</Styled.SectionTitle>
         <Styled.SectionTitle>Upcoming</Styled.SectionTitle>
       </Styled.SidebarContainer>
       <Styled.MainContainer>
