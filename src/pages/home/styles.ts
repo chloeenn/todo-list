@@ -10,12 +10,12 @@ export const MainContainer = styled.div`
   padding: 42px;
 `;
 
-export const GreetingContainer = styled.div`
+export const TextContainer = styled.div`
   text-align: center;
   margin-bottom: 32px; 
 `;
 
-export const Greeting = styled.h1`
+export const TextHeading = styled.h1`
   font-size: 32px;
   font-weight: 600;
   color: #333;

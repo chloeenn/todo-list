@@ -6,7 +6,7 @@ import * as Styled from "./styles";
 const Sidebar: React.FC = () => {
     return (
         <Styled.SidebarContainer>
-            <Styled.Title>Menu</Styled.Title>
+            <Styled.Title>TODO</Styled.Title>
             <SearchBar />
             <Styled.Separator />
             <Styled.SectionTitle>
@@ -15,7 +15,6 @@ const Sidebar: React.FC = () => {
             <Styled.SectionTitle>
                 <Link to={"/completed"}>Completed</Link>
             </Styled.SectionTitle>
-            <Styled.SectionTitle>Upcoming</Styled.SectionTitle>
         </Styled.SidebarContainer>
     );
 };

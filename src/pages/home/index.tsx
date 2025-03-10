@@ -19,12 +19,12 @@ const Home: React.FC = () => {
     else greeting = "Good Evening"
     return (
         <Styled.MainContainer>
-            <Styled.GreetingContainer>
-                <Styled.Greeting>
+            <Styled.TextContainer>
+                <Styled.TextHeading>
                     {greeting} ! 👋
-                </Styled.Greeting>
+                </Styled.TextHeading>
                 <Styled.DateText>Today, {formattedDate}</Styled.DateText>
-            </Styled.GreetingContainer>
+            </Styled.TextContainer>
             <CreateTask />
             <TaskList />
         </Styled.MainContainer>

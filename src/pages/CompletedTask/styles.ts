@@ -1,18 +1,19 @@
 import styled from "styled-components";
 
 export const CompletedContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 32px;
-  width: 100%;
+  min-height: 100vh;
   background-color: #f9f9f9;
+  padding: 32px;
 `;
 
-export const SectionTitle = styled.h2`
-  font-size: 24px;
+export const SectionTitle = styled.h1`
+  font-size: 32px;
   font-weight: 600;
-  margin-bottom: 16px;
   color: #333;
+  margin: 0;
 `;
 
 export const TaskList = styled.ul`
