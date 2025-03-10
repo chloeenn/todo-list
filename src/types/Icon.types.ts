@@ -1,8 +1,9 @@
 import React from 'react';
 
-export interface IconType extends React.SVGProps<SVGSVGElement> {
+export interface IconType {
     className?: string;
     size?: number;
     color?: string;
     'aria-label'?: string;
+    path: string | string[];  
 }
