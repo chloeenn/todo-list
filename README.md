@@ -51,12 +51,12 @@ src
    ├─ App.tsx
    ├─ components
    │  ├─ CreateTask
-   │  │  └─ __tests_
+   │  │  └─ __tests__
    │  ├─ Layout
    │  ├─ Search
    │  ├─ Sidebar
    │  ├─ TaskItem
-   │  │  └─ __tests
+   │  │  └─ __tests__
    │  ├─ TaskList
    │  │  └─ __tests__
    │  └─ icons
