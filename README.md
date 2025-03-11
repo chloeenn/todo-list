@@ -1,8 +1,10 @@
 # To-Do List
 
-This project is a simple to-do list application built using React.
+This project is a simple to-do list application built using React. The application provides functionality for adding, editing, deleting, completing tasks, providing interface for daily task management.
 
-The application provides functionality for adding, editing, deleting, completing tasks, providing interface for daily task management.
+## Live Demo 
+
+Live Demo: [https://todo-list-nine-brown.vercel.app](https://todo-list-nine-brown.vercel.app)
 
 ## Features
 
