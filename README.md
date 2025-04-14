@@ -1,6 +1,7 @@
 # To-Do List
 
-This project is a simple to-do list application built using React. The application provides functionality for adding, editing, deleting, completing tasks, providing interface for daily task management.
+A full-stack To-Do List application built with **React**, **TypeScript**, and **GraphQL**. This application allows users to create, update, and manage tasks with optional notes and due dates.
+
 
 ## Live Demo 
 
@@ -29,11 +30,18 @@ https://github.com/user-attachments/assets/7ea77d4c-00f7-446d-aaad-10ca651630f6
    ```
 2. Install dependencies:
    ```sh
-   npm install 
+   cd client
+   npm install
+   ```
+   ```sh
+   cd ../server
+   npm install
    ```
 3. Start the development server:
+   From the root directory:
    ```sh
-   npm start  
+   npm install -D concurrently 
+   npm run dev
    ```
 ## Running Tests
 
@@ -47,28 +55,8 @@ This will execute all test cases using Vitest.
 
 ## Folder Structure
 ```
-src
-   ├─ App.tsx
-   ├─ components
-   │  ├─ CreateTask
-   │  │  └─ __tests__
-   │  ├─ Layout
-   │  ├─ Search
-   │  ├─ Sidebar
-   │  ├─ TaskItem
-   │  │  └─ __tests__
-   │  ├─ TaskList
-   │  │  └─ __tests__
-   │  └─ icons
-   ├─ context
-   ├─ index.css
-   ├─ index.tsx
-   ├─ pages
-   │  ├─ CompletedTask
-   │  └─ Home
-   ├─ setupTests.ts
-   ├─ types
-   └─ utils
-
-
+todo-list/
+├── client/         # React frontend (Vite + TS)
+├── server/         # Node.js + Apollo GraphQL backend
+├── README.md
 ```
