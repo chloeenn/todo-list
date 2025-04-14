@@ -63,7 +63,7 @@ export const COMPLETE_TASK = gql`
 
 export const GET_COMPLETED_TASKS = gql`
   query GetCompletedTasks {
-    tasks(where: { done: true }) {
+    completedTasks {
       id
       title
       description
