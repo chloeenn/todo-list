@@ -38,6 +38,7 @@ https://github.com/user-attachments/assets/7ea77d4c-00f7-446d-aaad-10ca651630f6
    npm install
    ```
 3. Start the development server:
+
    From the root directory:
    ```sh
    npm install -D concurrently 
